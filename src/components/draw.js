@@ -1,6 +1,7 @@
 import './draw.css';
 import { useState, useEffect } from 'react';
 import Q from './commands/q';
+import Grid from './grid';
 import { useMousePosition } from './useMousePosition';
 
 const Draw = () => {
@@ -30,17 +31,36 @@ const Draw = () => {
             setType("absolute")
         }
     }
+    function commandToggle(){
+        const buttons = document.getElementById("commandBtns")
+        const button = document.getElementById("commandBtn")
+        if (buttons.style.display==="none"){
+            button.classList.add("selected")
+            buttons.style.display = "flex"
+        }else{
+            buttons.style.display = "none"
+            button.classList.remove("selected")
+        }
+    }
+
     return (
         <div className="draw">
             <div className="typeSwitcher">
                 <div className="switch" id="absolute" onClick={()=>toggle()}>Absolute</div>
                 <div className="switch selected" id="relative" onClick={()=>toggle()}>Relative</div>
             </div>
-            <div className="commandBtns">
-                <Q type={type} />
+            <div id="commandBtn" className="cmdBtn" onClick={() => commandToggle()}>
+                <p>?</p>
             </div>
-            <div className="grid" id="grid">
-                
+            <div id="commandBtns" className="commandBtns">
+                <Q type={type} toggle={commandToggle} />
+                <div className="command"  onClick={() => commandToggle()}>
+                <button className="commandBtn">X</button>
+                </div>
+            </div>
+            
+            <div className="grid">
+                <Grid size="200" />
             </div>
             {mousePosition.x}
             {mousePosition.y}

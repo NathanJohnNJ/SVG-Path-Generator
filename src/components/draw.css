@@ -18,7 +18,42 @@
     color: #ffffff;
     background-color: #4e4e4e;
 }
+.cmdBtn{
+    width:30px;
+    height:30px;    
+    color:#4e4e4e;
+    background-color: #000000;
+    text-align: center;
+    text-shadow: -1px 1px 1px #ffffff;
+    font-size: 30px;
+    text-justify: center;
+}
+.cmdBtn:hover{
+    cursor:pointer;
+    box-shadow: -1px -1px 1px 1px #ffffff, -1px 1px 1px 1px #ffffff, 1px 1px 1px 1px #ffffff, 1px -1px 1px 1px #ffffff;
+}
+.commandBtns{
+    align-items: center;
+    justify-content: space-evenly;
+    display:none;
+    margin: 5px;
+}
+
+.commandBtn{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    color: #4e4e4e;
+    border: none;
+    margin: 10px;
+}
+.commandBtn:hover{
+    color: #ffffff;
+    background-color: #4e4e4e;
+    box-shadow: -1px -1px 1px 1px #ffffff, -1px 1px 1px 1px #ffffff, 1px 1px 1px 1px #ffffff, 1px -1px 1px 1px #ffffff;
+}
 .grid{
+    margin-top: 200px;
     width: 200px;
     height: 200px;
     background-color: #5f5f5f;
